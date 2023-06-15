@@ -1,0 +1,25 @@
+{
+  "name": "netflix",
+  "version": "1.0.0",
+  "description": "This is about netflix api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "netflix": "nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "mongo",
+    "mongodb"
+  ],
+  "author": "Aboje Gabriel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0"
+  }
+}
