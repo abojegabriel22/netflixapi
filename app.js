@@ -51,17 +51,24 @@ app.get('/items',async (req,res)=>{
     res.send(output)
 })
 
-// movies with respect to category + location 
-app.get('/filter/:categoryId', async (req,res)=>{
-    let categoryId = Number(req.params.categoryId)
-    let locationId = Number(req.query.locationId)
-    if(locationId){
+// movies with respect to location + category & type 
+app.get('/filter/:locationId', async (req,res)=>{
+    let locationId = Number(req.params.locationId)
+    let categoryId = Number(req.query.categoryId)
+    let typeId = Number(req.query.typeId)
+    if(categoryId){
         query = {
-            "category_id":categoryId,
-            "location_id":locationId
+            "location_id":locationId,
+            "category_id":categoryId
             
         }
-    }else{
+    }else if (typeId){
+        query = {
+            "location_id":locationId,
+            "type_id":typeId
+        }
+    }
+    else{
         query = {}
     }
     let collection = "items"
